@@ -11,7 +11,10 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             key={option}
             className={style.button}
             type="button"
-            onClick={onLeaveFeedback}
+            onClick={e => {
+              let data = e.target.name;
+              return onLeaveFeedback(data);
+            }}
             name={option}
             style={{ backgroundColor: getColorBtn(option) }}
           >
